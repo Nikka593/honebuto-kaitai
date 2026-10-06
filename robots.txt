@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nikka593.github.io/honebuto-kaitai/sitemap.xml
