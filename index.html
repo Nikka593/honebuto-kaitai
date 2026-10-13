@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="370兆円は何に使う？食料品の消費税1%は誰に効く？一次資料で確かめた全19章の図解ガイド。">
 <meta name="twitter:image" content="https://nikka593.github.io/honebuto-kaitai/og.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"骨太解体新書｜骨太の方針2026を、経済の素人が人に語れるようになるまで","description":"骨太の方針2026と17の戦略分野、食料品の消費税1%、長期金利、世論を一次資料にもとづいて図解した学習ガイド","inLanguage":"ja","datePublished":"2026-10-06","dateModified":"2026-10-06","image":"https://nikka593.github.io/honebuto-kaitai/og.png","mainEntityOfPage":"https://nikka593.github.io/honebuto-kaitai/","about":["経済財政運営と改革の基本方針2026","日本成長戦略","財政","消費税"]}
+{"@context":"https://schema.org","@type":"Article","headline":"骨太解体新書｜骨太の方針2026を、経済の素人が人に語れるようになるまで","description":"骨太の方針2026と17の戦略分野、食料品の消費税1%、長期金利、世論を一次資料にもとづいて図解した学習ガイド","inLanguage":"ja","datePublished":"2026-10-06","dateModified":"2026-10-13","image":"https://nikka593.github.io/honebuto-kaitai/og.png","mainEntityOfPage":"https://nikka593.github.io/honebuto-kaitai/","about":["経済財政運営と改革の基本方針2026","日本成長戦略","財政","消費税"]}
 </script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -400,6 +400,31 @@ a{color:var(--cobalt)}
 .next p{font-size:15px;line-height:1.7}
 .next p b{font-family:var(--f-display);font-weight:400;font-size:18px;display:block}
 @media (max-width:560px){.next div{grid-template-columns:1fr;gap:4px}}
+/* 国会を目で追う：図・写真・映像 */
+.diet{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}
+.diet h3{grid-column:1/-1;font-size:clamp(22px,2.6vw,30px)}
+.photo{margin:0;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.photo img,.photo svg{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.photo figcaption{padding:12px 16px 14px;font-size:13px;line-height:1.7;color:var(--sub)}
+.photo figcaption b{color:var(--ink)}
+.photo .credit{display:block;font-size:11px;margin-top:2px}
+.route{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:rt}
+.route li{position:relative;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 16px 12px 52px;font-size:14px;line-height:1.65}
+.route li::before{counter-increment:rt;content:counter(rt);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-num);font-weight:800;font-size:14px;background:var(--paper2);color:var(--ink)}
+.route li b{display:block;font-family:var(--f-display);font-weight:400;font-size:16px}
+.route li.done{border-color:var(--ink)}
+.route li.done::before{background:var(--ink);color:var(--paper)}
+.route li.here{border-color:var(--ink);background:var(--sun);color:var(--onSun)}
+.route li.here::before{content:"今";background:var(--onSun);color:var(--sun);font-family:var(--f-body);font-size:12px}
+.route li .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;border:1.5px solid currentColor;border-radius:99px;padding:0 8px;margin-left:6px;vertical-align:2px}
+.watch{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.watch a{display:block;background:var(--night);color:var(--onNight);text-decoration:none;border-radius:16px;padding:16px 18px;font-size:13px;line-height:1.6;transition:transform .2s}
+.watch a:hover{transform:translateY(-2px)}
+.watch a b{display:block;font-family:var(--f-display);font-weight:400;font-size:17px;margin-bottom:2px}
+.watch a b::after{content:" ↗"}
+.diet .note{grid-column:1/-1}
+@media (max-width:860px){.diet{grid-template-columns:1fr}.watch{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.watch a{transition:none}.watch a:hover{transform:none}}
 
 /* L13 語ってみよう */
 .talk{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
@@ -909,7 +934,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
     <div class="rate">
       <div class="rv">
         <p class="num big"><span data-count="3.085" data-dec="3">3.085</span><small>%</small></p>
-        <p class="note">2026年9月28日の終値。9月1日に一時3%を付け、1996年10月以来約30年ぶりの水準と報じられた</p>
+        <p class="note">2026年9月28日の終値。9月1日に一時3%を付け、1996年10月以来約30年ぶりの水準と報じられた。9月25日には一時3.115%と、1996年8月以来の高さになった（NHK）</p>
         <div class="ratebars" id="ratebars">
           <div><span>予算をつくった頃の平均</span><i style="--w:61.6%"></i><b>1.9%</b></div>
           <div><span>予算の想定金利</span><i style="--w:97.2%"></i><b>3.0%</b></div>
@@ -932,7 +957,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
       <article class="rv"><span class="who">家計</span><h3>ローン金利・預金金利が動く</h3><p>固定金利の住宅ローンは長期金利の影響を受けやすく、上がりやすい。一方で、預金や個人向け国債の金利は上がりやすくなる</p></article>
       <article class="rv"><span class="who">会社</span><h3>お金を借りる費用が上がる</h3><p>設備投資のための借入れの費用が上がる。国が投資を呼び込もうとしている時期に、どこまで影響するかが注目点</p></article>
     </div>
-    <p class="src">出典：<a href="https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20260312/01.pdf">財務省 財政制度等審議会資料（国債費・積算金利）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20260901de47546">NHK（9/1 長期金利3%）</a>、<a href="https://www.oanda.jp/lab-education/market_news/kn_2026092801001384/">共同通信配信（9/28）</a>、<a href="https://www.stat.go.jp/data/cpi/sokuhou/nen/pdf/zen-n.pdf">総務省統計局 消費者物価指数</a>、<a href="https://kumanichi.com/articles/2028077">共同通信世論調査（8/22〜23）</a>　※「何が起きる？」は一般的な説明</p>
+    <p class="src">出典：<a href="https://www.mof.go.jp/about_mof/councils/fiscal_system_council/sub-of_fiscal_system/proceedings/material/zaiseia20260312/01.pdf">財務省 財政制度等審議会資料（国債費・積算金利）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20260901de47546">NHK（9/1 長期金利3%）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20260925de52314">NHK（9/25 一時3.115%）</a>、<a href="https://www.oanda.jp/lab-education/market_news/kn_2026092801001384/">共同通信配信（9/28）</a>、<a href="https://www.stat.go.jp/data/cpi/sokuhou/nen/pdf/zen-n.pdf">総務省統計局 消費者物価指数</a>、<a href="https://kumanichi.com/articles/2028077">共同通信世論調査（8/22〜23）</a>　※「何が起きる？」は一般的な説明</p>
   </div>
 </section>
 
@@ -959,7 +984,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
   <div class="wrap">
     <p class="kicker"><b>12</b>いちばん関心が高い話題</p>
     <h2 class="h2 rv">食料品の消費税1%を、<br><span class="mark">完全に理解する</span>。</h2>
-    <p class="lead rv" style="margin-top:22px">骨太の方針では結論を持ち越し、8月5日に基本方針、9月15日に大綱を閣議決定しました。2027年4月1日から2029年3月31日までの2年間の、臨時の措置です。</p>
+    <p class="lead rv" style="margin-top:22px">骨太の方針では結論を持ち越し、8月5日に基本方針、9月15日に大綱を閣議決定しました。2027年4月1日から2029年3月31日までの2年間の、臨時の措置です。政府は10月9日に関連法案を閣議決定し、同じ日に国会（衆議院）へ提出しました。成立して実施されれば、1989年に消費税が始まってから初めての税率の引き下げになると報じられています。働く人への支援金の対象となる所得の基準などは政令（内閣が決める細かいルール）で定めるとされ、具体的な所得の範囲や金額はまだ決まっていません。</p>
     <div class="taxchips rv">
       <span class="one">スーパーの食品・テイクアウト <em>8→1%</em></span>
       <span class="ten">外食・お酒 <em>10%のまま</em></span>
@@ -983,7 +1008,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
         <div><b>お店へ</b><span>レジの改修や新しいレジへの移行を支援。値札の表示にも切り替え期間の特例を設ける</span></div>
       </div>
     </div>
-    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260915/01_siryou1.pdf">飲食料品消費税率の臨時的な引下げ及び就業者負担軽減支援金の導入に関する大綱（9/15 閣議決定）</a>、<a href="https://www.kantei.go.jp/jp/kakugi/2026/kakugi-2026080501.html">首相官邸 臨時閣議（8/5）</a>、<a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm">国税庁 軽減税率制度</a></p>
+    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260915/01_siryou1.pdf">飲食料品消費税率の臨時的な引下げ及び就業者負担軽減支援金の導入に関する大綱（9/15 閣議決定）</a>、<a href="https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20261009/siryou1.pdf">法案の概要（10/9 内閣官房）</a>、<a href="https://www.niigata-nippo.co.jp/articles/-/921880">共同通信（10/9 衆院に提出）</a>、<a href="https://kumanichi.com/articles/2044798">共同通信（導入以来初の引き下げ）</a>、<a href="https://www.kantei.go.jp/jp/kakugi/2026/kakugi-2026080501.html">首相官邸 臨時閣議（8/5）</a>、<a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm">国税庁 軽減税率制度</a></p>
   </div>
 </section>
 
@@ -1078,12 +1103,57 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
       <div><span class="d">7/30<small>済</small></span><p><b>来年度予算の要求ルール</b>投資枠は要求の上限なし</p></div>
       <div><span class="d">8/5・9/15<small>済</small></span><p><b>食料品の消費税1%を決定</b>基本方針→大綱の順に閣議決定</p></div>
       <div><span class="d">9/30・10/1<small>済</small></span><p><b>諮問会議・成長戦略会議</b>年内の課題を確認。「日本成長戦略実行計画」づくりに着手し、今後5年間を集中投資期間とする方針</p></div>
-      <div class="now"><span class="d">いま<small>10月</small></span><p><b>予算の査定が進む時期</b>投資枠に何が入るかが焦点（例年の日程）</p></div>
+      <div><span class="d">10/5<small>済</small></span><p><b>臨時国会が開会</b>第222回臨時国会。会期は12月12日までの69日間。首相は所信表明演説で、食料品の消費税引き下げの関連法案の成立に理解を求めた。報道では、この法案と衆議院の議員定数削減が主な焦点とされ、野党側は現金給付などの対案を示すと報じられている（日経）</p></div>
+      <div><span class="d">10/7〜9<small>済</small></span><p><b>代表質問と、消費税の法案提出</b>衆議院の代表質問（10/7〜8）で野党側は財源の明示を求め、首相は（2年間で約10兆円とされる）減税の財源について、ほかの財政需要もふまえ予算編成全体を見すえて検討すると答弁（NHK）。10/9に関連法案を閣議決定し衆議院に提出。同じ日に経済財政諮問会議（第14回）で「中長期経済財政計画の推進に向けた具体化」を議論</p></div>
+      <div class="now"><span class="d">いま<small>10月</small></span><p><b>予算委員会の論戦と予算の査定</b>首相と全閣僚が出席する予算委員会が、衆議院で10/13・14、参議院で10/16・19に開かれる予定。消費税の法案は、そのあと委員会での審議に移る見通しと報じられている（日経）。与党は10月中の審議入りをめざし、野党側は財源の明示などを求めている（NHK）。衆議院本会議での審議入りの日が決まったとの報道は、10月13日時点で確認できていない。予算では投資枠に何が入るかが焦点（例年の日程）</p></div>
+      <div class="future"><span class="d">10/29〜30<small>予定</small></span><p><b>日銀の金融政策決定会合</b>物価と景気の見通し（展望レポート）も公表される予定。長期金利の動きにも関わる</p></div>
       <div class="future"><span class="d">11/2<small>予定</small></span><p><b>防災庁が発足</b></p></div>
       <div class="future"><span class="d">年末<small>予定</small></span><p><b>令和9年度予算案・実行計画</b>予算編成の基本方針も2026年内に改定</p></div>
       <div class="future"><span class="d">2027/4<small>予定</small></span><p><b>「元年」の予算がスタート</b>食料品の消費税1%も始まる</p></div>
     </div>
-    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kaigi/dai8/gijishidai.html">日本成長戦略会議 第8回（10/1）</a>、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html">経済財政諮問会議 令和8年</a>、骨太方針2026 本文</p>
+    <div class="diet rv" id="diet">
+      <h3>国会のいまを、<span class="mark">目で追う</span>。</h3>
+      <figure class="photo">
+        <svg viewBox="0 0 640 400" role="img" aria-labelledby="dietT">
+          <title id="dietT">国会議事堂を正面から見たイラスト。左の翼が衆議院、右の翼が参議院、中央に段々の塔</title>
+          <rect width="640" height="400" style="fill:var(--paper)"/>
+          <circle cx="520" cy="80" r="34" style="fill:var(--sun)"/>
+          <rect x="0" y="330" width="640" height="70" style="fill:var(--line)"/>
+          <g style="fill:var(--card);stroke:var(--ink)" stroke-width="3" stroke-linejoin="round">
+            <rect x="40" y="230" width="230" height="100"/>
+            <rect x="370" y="230" width="230" height="100"/>
+            <rect x="250" y="200" width="140" height="130"/>
+            <rect x="266" y="160" width="108" height="40"/>
+            <rect x="280" y="128" width="80" height="32"/>
+            <polygon points="286,128 320,58 354,128"/>
+          </g>
+          <g style="fill:var(--line)">
+            <rect x="60" y="250" width="14" height="60"/><rect x="92" y="250" width="14" height="60"/><rect x="124" y="250" width="14" height="60"/><rect x="156" y="250" width="14" height="60"/><rect x="188" y="250" width="14" height="60"/><rect x="220" y="250" width="14" height="60"/>
+            <rect x="406" y="250" width="14" height="60"/><rect x="438" y="250" width="14" height="60"/><rect x="470" y="250" width="14" height="60"/><rect x="502" y="250" width="14" height="60"/><rect x="534" y="250" width="14" height="60"/><rect x="566" y="250" width="14" height="60"/>
+            <rect x="272" y="222" width="12" height="90"/><rect x="298" y="222" width="12" height="90"/><rect x="330" y="222" width="12" height="90"/><rect x="356" y="222" width="12" height="90"/>
+          </g>
+          <rect x="300" y="290" width="40" height="40" style="fill:var(--ink)"/>
+          <g font-size="20" font-weight="700" text-anchor="middle" style="fill:var(--ink);font-family:var(--f-body)">
+            <text x="155" y="215">衆議院</text><text x="485" y="215">参議院</text>
+          </g>
+        </svg>
+        <figcaption><b>国会議事堂</b>　正面から見て左が衆議院、右が参議院。法案は、ふつう両方の院で審議されます（会期末は12月12日）<span class="credit">イラスト：当サイト作成</span></figcaption>
+      </figure>
+      <ol class="route" aria-label="食料品の消費税の法案がたどる道のり">
+        <li class="done"><b>法案を国会に提出<span class="tag">10/9 済</span></b>政府が閣議決定し、衆議院に提出</li>
+        <li class="here"><b>予算委員会での論戦<span class="tag">いま</span></b>首相と全閣僚が出席。衆議院で10/13・14、参議院で10/16・19の予定。法案はこのあと委員会での審議に移る見通しと報じられている</li>
+        <li><b>衆議院で審議・採決</b>重要な法案は本会議で趣旨説明と質疑 → 委員会で審査・採決 → 本会議で採決</li>
+        <li><b>参議院で審議・採決</b>衆議院と同じ流れ。両方の院で可決されると成立（憲法59条）</li>
+        <li><b>成立すれば、2027年4月から実施</b>会期中に議決されなければ、原則として次の国会に引き継がれない</li>
+      </ol>
+      <div class="watch" aria-label="国会の審議を映像で見る">
+        <a href="https://www.shugiintv.go.jp/" target="_blank" rel="noopener"><b>衆議院インターネット審議中継</b>本会議・委員会の生中継と録画（衆議院の公式サイト）</a>
+        <a href="https://www.webtv.sangiin.go.jp/" target="_blank" rel="noopener"><b>参議院インターネット審議中継</b>本会議・委員会の生中継と録画（参議院の公式サイト）</a>
+      </div>
+      <p class="note">ニュースでは、論戦の一場面が切り取られて伝わることがあります。公式の中継なら、質問する側と答える側のやりとりを、編集なしで最初から最後まで確かめられます。道のりの図は、一般的な手続きを当サイトが整理したものです。</p>
+      <!-- 写真を入れるとき：images/README.md の手順と利用条件を守り、上の <figure class="photo"> と同じ形で追加する -->
+    </div>
+    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kaigi/dai8/gijishidai.html">日本成長戦略会議 第8回（10/1）</a>、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html">経済財政諮問会議 令和8年</a>、骨太方針2026 本文、<a href="https://news.web.nhk/newsweb/na/nd-20261005de54430">NHK（10/5 所信表明演説 全文）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56492">NHK（10/8 代表質問）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261010de57530">NHK（10/10 審議入りをめぐる協議）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56486">NHK（10/8 衆院予算委の日程）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261009de57176">NHK（10/9 参院予算委の日程）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA082220Y6A001C2000000/">日経（予算委のあとの法案審議）</a>、<a href="https://www.boj.or.jp/about/calendar/index.htm">日本銀行 公表予定</a>、<a href="https://laws.e-gov.go.jp/law/321CONSTITUTION">日本国憲法</a>、<a href="https://www.kantei.go.jp/jp/105/actions/202610/09keizai.html">首相官邸（10/9 経済財政諮問会議）</a>、<a href="https://www.jiji.com/jc/article?k=2026100400185&amp;g=pol">時事（10/4 臨時国会の焦点）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA0111U0R01C26A0000000/">日経（10/5 野党の対案）</a></p>
   </div>
 </section>
 
@@ -1107,9 +1177,10 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
       <details><summary>お金はどこから出すの？（財源）</summary><p class="ans">骨太の方針は、租税特別措置（税の優遇）や補助金・基金を点検して見直し、重点化するとしています。投資枠のうち経済安全保障で特に重要な分野は特別会計で別に管理し、将来の税以外の収入などで返す裏付けがある「つなぎ国債」で、複数年の財源を確保する方針です。成長による税収増もあてにしていますが、専門家からはその不確実性を指摘する声もあります。</p></details>
       <details><summary>物価はまだ上がるの？</summary><p class="ans">消費者物価は2022〜2025年の4年連続で2%を上回りました（総合・年平均）。内閣府は2026年度の消費者物価上昇率を2.2%程度と見ています。政府は、物価の上昇を年1%程度上回る賃上げを、2029年度までに当たり前にすることを目標にしています。</p></details>
       <details><summary>中小企業への支えは？</summary><p class="ans">国や自治体の仕事（官公需）で、実際の値段を反映した予定価格の作成などを2027年度末までに100%実施するとしています。価格転嫁と取引の適正化も進めるとしています。食料品を売るお店には、レジの改修への支援があります。</p></details>
+      <details><summary>法案は、これからどう決まるの？（国会の流れ）</summary><p class="ans">法律案は、衆議院と参議院の両方で可決されたときに法律になります（憲法59条）。ふつうは、先に審議する院で委員会に付託され（重要な法案は、その前に本会議で趣旨説明と質疑）、委員会で審査・採決したあと本会議で採決し、もう一方の院でも同じ手続きをたどります。会期中に議決に至らなかった法案は、原則として次の国会に引き継がれません（国会法68条）。ただし、各院の議決で特に委員会に付託され、閉会中も審査する「継続審査」とした法案は引き継がれます。今の臨時国会の会期末は12月12日です。審議の日程は、与野党の協議で決まります。</p></details>
       <details><summary>原文を自分で読むには？</summary><p class="ans">内閣府のサイトで本文と概要が公開されています。最初は概要（内閣府作成）で全体をつかみ、気になる章だけ本文で確かめるのがおすすめです。<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/cabinet/honebuto/2026/2026_basicpolicies_ja.pdf">本文PDF</a>／<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/cabinet/honebuto/2026/summary_ja.pdf">概要PDF</a></p></details>
     </div>
-    <p class="src">出典：骨太方針2026 本文、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/0730shiryo_02-1.pdf">内閣府 中長期試算（7月）</a>、<a href="https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260915/01_siryou1.pdf">大綱（9/15）</a>、<a href="https://www.stat.go.jp/data/cpi/sokuhou/nen/pdf/zen-n.pdf">総務省統計局</a></p>
+    <p class="src">出典：骨太方針2026 本文、<a href="https://laws.e-gov.go.jp/law/321CONSTITUTION">日本国憲法</a>、<a href="https://laws.e-gov.go.jp/law/322AC1000000079">国会法</a>、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/0730shiryo_02-1.pdf">内閣府 中長期試算（7月）</a>、<a href="https://www.cas.go.jp/jp/seisaku/kokuminkaigi/contents/20260915/01_siryou1.pdf">大綱（9/15）</a>、<a href="https://www.stat.go.jp/data/cpi/sokuhou/nen/pdf/zen-n.pdf">総務省統計局</a></p>
   </div>
 </section>
 
@@ -1185,11 +1256,15 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
     </div>
     <h3 style="font-size:20px;margin-top:48px">更新履歴</h3>
     <ul class="log" id="changelog">
+      <li><time datetime="2026-10-13">2026年10月13日</time>17章に「国会のいまを、目で追う」を追加：国会議事堂のイラスト、法案がたどる道のりの図、衆参の公式審議中継へのリンク。写真を載せるための枠と利用ルール（images/README.md）を用意</li>
+      <li><time datetime="2026-10-13">2026年10月13日</time>「これから」の「いま」を更新：衆参の予算委員会の日程（衆10/13・14、参10/16・19）と、消費税の法案がそのあと委員会審議に移る見通しを追加</li>
+      <li><time datetime="2026-10-12">2026年10月12日</time>週次更新：10月9日に食料品の消費税の関連法案が閣議決定・国会提出されたことを反映。「これから」に代表質問・法案提出と、10月29〜30日の日銀会合（予定）を追加。よくある質問に「国会の流れ」を追加</li>
+      <li><time datetime="2026-10-06">2026年10月6日</time>週次更新：10月5日の臨時国会開会を「これから」に追加。食料品の消費税の関連法案は提出する方針である旨と、長期金利が9月25日に一時3.115%になったことを追記</li>
       <li><time datetime="2026-10-06">2026年10月6日</time>公開。全19章（去年との比較、金利、食料品の消費税、立場別、世論、誤解とQ&amp;A、批評のための5つの問いを含む）</li>
     </ul>
   </div>
 </section>
-<footer><div class="wrap">骨太解体新書 ― 最終更新 <time datetime="2026-10-06" id="lastmod">2026年10月6日</time>。掲載した数字は一次資料と照合しています。グループ分け・暮らしの例・たとえ話は理解のための当サイトの整理です。</div></footer>
+<footer><div class="wrap">骨太解体新書 ― 最終更新 <time datetime="2026-10-13" id="lastmod">2026年10月13日</time>。掲載した数字は一次資料と照合しています。グループ分け・暮らしの例・たとえ話は理解のための当サイトの整理です。</div></footer>
 <script>
 (function(){
 const root=document.documentElement;
