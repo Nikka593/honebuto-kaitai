@@ -400,6 +400,31 @@ a{color:var(--cobalt)}
 .next p{font-size:15px;line-height:1.7}
 .next p b{font-family:var(--f-display);font-weight:400;font-size:18px;display:block}
 @media (max-width:560px){.next div{grid-template-columns:1fr;gap:4px}}
+/* 国会を目で追う：図・写真・映像 */
+.diet{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;align-items:start}
+.diet h3{grid-column:1/-1;font-size:clamp(22px,2.6vw,30px)}
+.photo{margin:0;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.photo img,.photo svg{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.photo figcaption{padding:12px 16px 14px;font-size:13px;line-height:1.7;color:var(--sub)}
+.photo figcaption b{color:var(--ink)}
+.photo .credit{display:block;font-size:11px;margin-top:2px}
+.route{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:rt}
+.route li{position:relative;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 16px 12px 52px;font-size:14px;line-height:1.65}
+.route li::before{counter-increment:rt;content:counter(rt);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-num);font-weight:800;font-size:14px;background:var(--paper2);color:var(--ink)}
+.route li b{display:block;font-family:var(--f-display);font-weight:400;font-size:16px}
+.route li.done{border-color:var(--ink)}
+.route li.done::before{background:var(--ink);color:var(--paper)}
+.route li.here{border-color:var(--ink);background:var(--sun);color:var(--onSun)}
+.route li.here::before{content:"今";background:var(--onSun);color:var(--sun);font-family:var(--f-body);font-size:12px}
+.route li .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;border:1.5px solid currentColor;border-radius:99px;padding:0 8px;margin-left:6px;vertical-align:2px}
+.watch{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.watch a{display:block;background:var(--night);color:var(--onNight);text-decoration:none;border-radius:16px;padding:16px 18px;font-size:13px;line-height:1.6;transition:transform .2s}
+.watch a:hover{transform:translateY(-2px)}
+.watch a b{display:block;font-family:var(--f-display);font-weight:400;font-size:17px;margin-bottom:2px}
+.watch a b::after{content:" ↗"}
+.diet .note{grid-column:1/-1}
+@media (max-width:860px){.diet{grid-template-columns:1fr}.watch{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.watch a{transition:none}.watch a:hover{transform:none}}
 
 /* L13 語ってみよう */
 .talk{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
@@ -1086,7 +1111,49 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
       <div class="future"><span class="d">年末<small>予定</small></span><p><b>令和9年度予算案・実行計画</b>予算編成の基本方針も2026年内に改定</p></div>
       <div class="future"><span class="d">2027/4<small>予定</small></span><p><b>「元年」の予算がスタート</b>食料品の消費税1%も始まる</p></div>
     </div>
-    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kaigi/dai8/gijishidai.html">日本成長戦略会議 第8回（10/1）</a>、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html">経済財政諮問会議 令和8年</a>、骨太方針2026 本文、<a href="https://news.web.nhk/newsweb/na/nd-20261005de54430">NHK（10/5 所信表明演説 全文）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56492">NHK（10/8 代表質問）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261010de57530">NHK（10/10 審議入りをめぐる協議）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56486">NHK（10/8 衆院予算委の日程）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261009de57176">NHK（10/9 参院予算委の日程）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA082220Y6A001C2000000/">日経（予算委のあとの法案審議）</a>、<a href="https://www.boj.or.jp/about/calendar/index.htm">日本銀行 公表予定</a>、<a href="https://www.kantei.go.jp/jp/105/actions/202610/09keizai.html">首相官邸（10/9 経済財政諮問会議）</a>、<a href="https://www.jiji.com/jc/article?k=2026100400185&amp;g=pol">時事（10/4 臨時国会の焦点）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA0111U0R01C26A0000000/">日経（10/5 野党の対案）</a></p>
+    <div class="diet rv" id="diet">
+      <h3>国会のいまを、<span class="mark">目で追う</span>。</h3>
+      <figure class="photo">
+        <svg viewBox="0 0 640 400" role="img" aria-labelledby="dietT">
+          <title id="dietT">国会議事堂を正面から見たイラスト。左の翼が衆議院、右の翼が参議院、中央に段々の塔</title>
+          <rect width="640" height="400" style="fill:var(--paper)"/>
+          <circle cx="520" cy="80" r="34" style="fill:var(--sun)"/>
+          <rect x="0" y="330" width="640" height="70" style="fill:var(--line)"/>
+          <g style="fill:var(--card);stroke:var(--ink)" stroke-width="3" stroke-linejoin="round">
+            <rect x="40" y="230" width="230" height="100"/>
+            <rect x="370" y="230" width="230" height="100"/>
+            <rect x="250" y="200" width="140" height="130"/>
+            <rect x="266" y="160" width="108" height="40"/>
+            <rect x="280" y="128" width="80" height="32"/>
+            <polygon points="286,128 320,58 354,128"/>
+          </g>
+          <g style="fill:var(--line)">
+            <rect x="60" y="250" width="14" height="60"/><rect x="92" y="250" width="14" height="60"/><rect x="124" y="250" width="14" height="60"/><rect x="156" y="250" width="14" height="60"/><rect x="188" y="250" width="14" height="60"/><rect x="220" y="250" width="14" height="60"/>
+            <rect x="406" y="250" width="14" height="60"/><rect x="438" y="250" width="14" height="60"/><rect x="470" y="250" width="14" height="60"/><rect x="502" y="250" width="14" height="60"/><rect x="534" y="250" width="14" height="60"/><rect x="566" y="250" width="14" height="60"/>
+            <rect x="272" y="222" width="12" height="90"/><rect x="298" y="222" width="12" height="90"/><rect x="330" y="222" width="12" height="90"/><rect x="356" y="222" width="12" height="90"/>
+          </g>
+          <rect x="300" y="290" width="40" height="40" style="fill:var(--ink)"/>
+          <g font-size="20" font-weight="700" text-anchor="middle" style="fill:var(--ink);font-family:var(--f-body)">
+            <text x="155" y="215">衆議院</text><text x="485" y="215">参議院</text>
+          </g>
+        </svg>
+        <figcaption><b>国会議事堂</b>　正面から見て左が衆議院、右が参議院。法案は、ふつう両方の院で審議されます（会期末は12月12日）<span class="credit">イラスト：当サイト作成</span></figcaption>
+      </figure>
+      <ol class="route" aria-label="食料品の消費税の法案がたどる道のり">
+        <li class="done"><b>法案を国会に提出<span class="tag">10/9 済</span></b>政府が閣議決定し、衆議院に提出</li>
+        <li class="here"><b>予算委員会での論戦<span class="tag">いま</span></b>首相と全閣僚が出席。衆議院で10/13・14、参議院で10/16・19の予定。法案はこのあと委員会での審議に移る見通しと報じられている</li>
+        <li><b>衆議院で審議・採決</b>重要な法案は本会議で趣旨説明と質疑 → 委員会で審査・採決 → 本会議で採決</li>
+        <li><b>参議院で審議・採決</b>衆議院と同じ流れ。両方の院で可決されると成立（憲法59条）</li>
+        <li><b>成立すれば、2027年4月から実施</b>会期中に議決されなければ、原則として次の国会に引き継がれない</li>
+      </ol>
+      <div class="watch" aria-label="国会の審議を映像で見る">
+        <a href="https://www.shugiintv.go.jp/" target="_blank" rel="noopener"><b>衆議院インターネット審議中継</b>本会議・委員会の生中継と録画（衆議院の公式サイト）</a>
+        <a href="https://www.webtv.sangiin.go.jp/" target="_blank" rel="noopener"><b>参議院インターネット審議中継</b>本会議・委員会の生中継と録画（参議院の公式サイト）</a>
+      </div>
+      <p class="note">ニュースでは、論戦の一場面が切り取られて伝わることがあります。公式の中継なら、質問する側と答える側のやりとりを、編集なしで最初から最後まで確かめられます。道のりの図は、一般的な手続きを当サイトが整理したものです。</p>
+      <!-- 写真を入れるとき：images/README.md の手順と利用条件を守り、上の <figure class="photo"> と同じ形で追加する -->
+    </div>
+    <p class="src">出典：<a href="https://www.cas.go.jp/jp/seisaku/nipponseichosenryaku/kaigi/dai8/gijishidai.html">日本成長戦略会議 第8回（10/1）</a>、<a href="https://www5.cao.go.jp/keizai-shimon/kaigi/minutes/2026/index.html">経済財政諮問会議 令和8年</a>、骨太方針2026 本文、<a href="https://news.web.nhk/newsweb/na/nd-20261005de54430">NHK（10/5 所信表明演説 全文）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56492">NHK（10/8 代表質問）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261010de57530">NHK（10/10 審議入りをめぐる協議）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261008de56486">NHK（10/8 衆院予算委の日程）</a>、<a href="https://news.web.nhk/newsweb/na/nd-20261009de57176">NHK（10/9 参院予算委の日程）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA082220Y6A001C2000000/">日経（予算委のあとの法案審議）</a>、<a href="https://www.boj.or.jp/about/calendar/index.htm">日本銀行 公表予定</a>、<a href="https://laws.e-gov.go.jp/law/321CONSTITUTION">日本国憲法</a>、<a href="https://www.kantei.go.jp/jp/105/actions/202610/09keizai.html">首相官邸（10/9 経済財政諮問会議）</a>、<a href="https://www.jiji.com/jc/article?k=2026100400185&amp;g=pol">時事（10/4 臨時国会の焦点）</a>、<a href="https://www.nikkei.com/article/DGXZQOUA0111U0R01C26A0000000/">日経（10/5 野党の対案）</a></p>
   </div>
 </section>
 
@@ -1189,6 +1256,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
     </div>
     <h3 style="font-size:20px;margin-top:48px">更新履歴</h3>
     <ul class="log" id="changelog">
+      <li><time datetime="2026-10-13">2026年10月13日</time>17章に「国会のいまを、目で追う」を追加：国会議事堂のイラスト、法案がたどる道のりの図、衆参の公式審議中継へのリンク。写真を載せるための枠と利用ルール（images/README.md）を用意</li>
       <li><time datetime="2026-10-13">2026年10月13日</time>「これから」の「いま」を更新：衆参の予算委員会の日程（衆10/13・14、参10/16・19）と、消費税の法案がそのあと委員会審議に移る見通しを追加</li>
       <li><time datetime="2026-10-12">2026年10月12日</time>週次更新：10月9日に食料品の消費税の関連法案が閣議決定・国会提出されたことを反映。「これから」に代表質問・法案提出と、10月29〜30日の日銀会合（予定）を追加。よくある質問に「国会の流れ」を追加</li>
       <li><time datetime="2026-10-06">2026年10月6日</time>週次更新：10月5日の臨時国会開会を「これから」に追加。食料品の消費税の関連法案は提出する方針である旨と、長期金利が9月25日に一時3.115%になったことを追記</li>
