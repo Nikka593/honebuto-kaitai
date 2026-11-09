@@ -633,6 +633,102 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
 </div></div>
 
 <main>
+<!-- UPDATES:START 前回からの更新（毎週の見直しで、公開中の版との差分に書き換える） -->
+<style>
+.upd{background:var(--night);color:var(--onNight);padding-block:clamp(64px,10vw,128px);position:relative;overflow:hidden;isolation:isolate}
+.upd::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--onNight) 7%,transparent) 0 1px,transparent 1px 120px)}
+.upd .kicker{color:color-mix(in srgb,var(--onNight) 72%,transparent)}
+.upd .kicker b{background:var(--sun);color:var(--onSun)}
+.upd-range{display:flex;flex-wrap:wrap;align-items:baseline;gap:.08em .3em;margin-top:22px;font-family:var(--f-num);font-weight:800;font-stretch:78%;letter-spacing:-.03em;line-height:.85;font-size:clamp(64px,13vw,184px);font-variant-numeric:tabular-nums}
+.upd-range .from{color:color-mix(in srgb,var(--onNight) 38%,transparent)}
+.upd-range .arr{color:var(--sun);font-size:.6em;transform:translateY(-.12em)}
+.upd-range .to{color:var(--onNight)}
+.upd-h{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3.6vw,46px);line-height:1.35;margin-top:22px}
+.upd-h .mark{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--sun) 55%,transparent) 62%)}
+.upd-top{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,44px);align-items:center;margin-top:clamp(36px,5vw,60px);background:var(--sun);color:var(--onSun);border-radius:28px;padding:clamp(22px,3.4vw,44px);text-decoration:none;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.upd-top:hover{transform:translateY(-4px)}
+.upd-top>*{min-width:0}
+.upd-top .day{font-family:var(--f-num);font-weight:800;font-stretch:76%;letter-spacing:-.04em;line-height:.82;font-size:clamp(88px,15vw,210px);font-variant-numeric:tabular-nums}
+.upd-top .day small{display:block;font-family:var(--f-body);font-weight:700;font-size:13px;letter-spacing:.16em;margin-top:12px;font-stretch:100%}
+.upd-top .chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;background:var(--onSun);color:var(--sun);border-radius:99px;padding:3px 12px}
+.upd-top h3{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3.4vw,44px);line-height:1.3;margin-top:12px}
+.upd-top p{font-size:clamp(15px,1.3vw,17px);line-height:1.8;margin-top:10px;max-width:40em}
+.upd-top .go{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;font-size:15px;border-bottom:2px solid currentColor;padding-bottom:2px}
+.upd-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:14px}
+@media (max-width:1100px){.upd-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.upd-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.upd-grid>:last-child:nth-child(odd){grid-column:1/-1}.upd-card{padding:16px;border-radius:18px}.upd-card .v{font-size:clamp(34px,10vw,46px)}.upd-card b{font-size:14.5px}.upd-card p{font-size:12.5px}}
+.upd-card{display:flex;flex-direction:column;gap:6px;border-radius:22px;padding:22px;text-decoration:none;color:inherit;background:color-mix(in srgb,var(--onNight) 7%,transparent);border:1.5px solid color-mix(in srgb,var(--onNight) 14%,transparent);transition:border-color .3s,transform .35s cubic-bezier(.2,.8,.2,1);min-width:0}
+.upd-card:hover,.upd-card:focus-visible{border-color:var(--sun);transform:translateY(-3px)}
+.upd-card .st{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.14em;border:1.5px solid currentColor;border-radius:99px;padding:1px 9px;color:var(--sun)}
+.upd-card .v{font-family:var(--f-num);font-weight:800;font-stretch:78%;letter-spacing:-.03em;line-height:.9;font-size:clamp(46px,5vw,64px);margin-top:8px;font-variant-numeric:tabular-nums}
+.upd-card .v small{font-size:.38em;margin-left:2px;letter-spacing:0}
+.upd-card b{font-size:16px;line-height:1.5}
+.upd-card p{font-size:13.5px;line-height:1.7;color:color-mix(in srgb,var(--onNight) 74%,transparent)}
+.upd-card .ch{margin-top:auto;padding-top:10px;font-size:12px;font-weight:700;letter-spacing:.08em;color:color-mix(in srgb,var(--onNight) 70%,transparent)}
+.upd-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;margin-top:22px;font-size:13px;color:color-mix(in srgb,var(--onNight) 66%,transparent)}
+.upd-foot a{color:var(--onNight)}
+.upd a:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+@media (max-width:640px){.upd-top{grid-template-columns:1fr}.upd-top .day small{margin-top:8px}}
+@media (prefers-reduced-motion:reduce){.upd-top,.upd-card{transition:none}.upd-top:hover,.upd-card:hover{transform:none}}
+</style>
+<section class="upd" id="news" data-ch="前回からの更新" aria-labelledby="upd-title" data-since="2026-10-19" data-until="2026-11-09">
+  <div class="wrap">
+    <p class="kicker"><b>UPDATE</b>前回の更新から</p>
+    <p class="upd-range" aria-label="2026年10月19日から11月9日まで"><span class="from">10.19</span><span class="arr" aria-hidden="true">→</span><span class="to">11.09</span></p>
+    <h2 class="upd-h" id="upd-title">この3週間で、<span class="mark">ここが動いた</span>。</h2>
+
+    <a class="upd-top" href="#l12">
+      <div class="day" aria-hidden="true">11/6<small>2026.11.06</small></div>
+      <div>
+        <span class="chip">いちばん大きな動き</span>
+        <h3>食料品の消費税1%の法案が、衆議院を通過</h3>
+        <p>与党などの賛成で可決し、参議院へ。参議院では11月11日に審議入りし、13日からは特別委員会で本格的に審議する予定です。参議院では与党が過半数に届いておらず、野党の一部が賛成に回るかが焦点です。</p>
+        <span class="go">17章「これから」で流れを見る <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <div class="upd-grid">
+      <a class="upd-card rv" href="#lrate">
+        <span class="st">据え置き</span>
+        <span class="v">1.25<small>%</small></span>
+        <b>日銀は金利を据え置き</b>
+        <p>10月30日の会合で、政策金利は1.25%程度のまま。利上げを続ける方針は維持した。</p>
+        <span class="ch">10章 長期金利 →</span>
+      </a>
+      <a class="upd-card rv" href="#lrate">
+        <span class="st">数字を更新</span>
+        <span class="v">2.635<small>%</small></span>
+        <b>長期金利、3%を下回る</b>
+        <p>11月6日の終値。予算が利払いを見積もった3.0%より低い水準に。</p>
+        <span class="ch">10章 長期金利 →</span>
+      </a>
+      <a class="upd-card rv" href="#l12">
+        <span class="st">数字を更新</span>
+        <span class="v">2.1<small>%</small></span>
+        <b>9月の物価上昇率</b>
+        <p>生鮮食品を除く総合で前年比2.1%。8月の1.7%から伸びが高まった。</p>
+        <span class="ch">17章 これから →</span>
+      </a>
+      <a class="upd-card rv" href="#lfood">
+        <span class="st">追記</span>
+        <span class="v">対案</span>
+        <b>減税か、給付か</b>
+        <p>国民民主党が10月20日に対案の法案を提出。公明党は給付を軸にした案を示した。</p>
+        <span class="ch">12章 食料品1% →</span>
+      </a>
+      <a class="upd-card rv" href="#l10">
+        <span class="st">発足</span>
+        <span class="v">11/2</span>
+        <b>防災庁が発足</b>
+        <p>初代の防災担当大臣は細野豪志氏。地方には防災局を置く。</p>
+        <span class="ch">14章 安全・安心 →</span>
+      </a>
+    </div>
+
+    <p class="upd-foot"><span>毎週月曜に一次資料と報道を確かめて見直しています。</span><a href="#changelog">すべての変更は更新履歴へ</a></p>
+  </div>
+</section>
+<!-- UPDATES:END -->
 <!-- L1 -->
 <section class="sec" id="l1" data-ch="骨太とは">
   <div class="wrap">
@@ -1278,6 +1374,7 @@ footer{padding-block:48px 72px;border-top:2px solid var(--ink);font-size:13px;co
     </div>
     <h3 style="font-size:20px;margin-top:48px">更新履歴</h3>
     <ul class="log" id="changelog">
+      <li><time datetime="2026-11-09">2026年11月9日</time>ページ上部（タイトルの下）に「前回からの更新」欄を追加。前回の更新から変わった点と、該当する章へのリンクを、ひと目で分かるようにした</li>
       <li><time datetime="2026-11-09">2026年11月9日</time>週次更新：消費税の法案の衆議院での審議入り（10/20）と衆議院通過（11/6）を「済」に、参議院での審議入り（11/11予定）を「いま」に。17章に「参議院が、なぜ焦点なのか」を追加。9月の消費者物価、日銀の据え置き（10/30）、防災庁の発足（11/2）を反映。長期金利を11/6の終値（2.635%）に、野党の案の動き（国民民主党の法案提出など）を更新</li>
       <li><time datetime="2026-10-19">2026年10月19日</time>週次更新：衆参の予算委員会を「済」に、10/20の衆議院での審議入り（予定）を「いま」に。12章に「政府の法案と、野党が示した案を並べる」を追加。長期金利を10/16の終値（2.930%）に、世論に時事（10月）・読売（10月）の調査を追加。10/23の物価統計の公表予定と、日銀総裁の発言を追記</li>
       <li><time datetime="2026-10-13">2026年10月13日</time>17章に「国会のいまを、目で追う」を追加：国会議事堂のイラスト、法案がたどる道のりの図、衆参の公式審議中継へのリンク。写真を載せるための枠と利用ルール（images/README.md）を用意</li>
